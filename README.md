@@ -13,4 +13,4 @@ In this project w will be investigating binary trees and binary search trees. We
 
 ## :blue_book: Authors
 * Github [**@ercudu75**](https://github.com/ercudu75) - Linkedin [**Ilyass Bentalha**](https://www.linkedin.com/in/ilyass-bentalha/)
-* Github [**thevorgx**](https://github.com/thevorgx) - Linkedin [**Khalid El Allali**](https://www.linkedin.com/in/khalid-el-allali-025298291/)
+* Github [**@thevorgx**](https://github.com/thevorgx) - Linkedin [**Khalid El Allali**](https://www.linkedin.com/in/khalid-el-allali-025298291/)
