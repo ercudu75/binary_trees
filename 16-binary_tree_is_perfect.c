@@ -58,9 +58,8 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	left_leaves = binary_tree_leaves(tree->left);
 	right_leaves = binary_tree_leaves(tree->right);
 
-
 	if (left_height == right_height && left_leaves == right_leaves)
 		return (1);
-	return (0);
 
+	return (0);
 }
