@@ -1,13 +1,13 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_leaves_v2 - Count the leaves of a binary tree
+ * binary_tree_leaves - Count the leaves of a binary tree
  *
  * @tree: Pointer to the root node of the tree
  *
  * Return: number of leaves in the binary tree
  */
-size_t binary_tree_leaves_v2(const binary_tree_t *tree)
+size_t binary_tree_leaves(const binary_tree_t *tree)
 {
 	size_t leaves_left;
 	size_t leaves_right;
@@ -17,9 +17,9 @@ size_t binary_tree_leaves_v2(const binary_tree_t *tree)
 	if (tree->left == NULL && tree->right == NULL)
 		return (1);
 
-	leaves_left = binary_tree_leaves_v2(tree->left);
-	leaves_right = binary_tree_leaves_v2(tree->right);
-	return (leaves_left && leaves_right);
+	leaves_left = binary_tree_leaves(tree->left);
+	leaves_right = binary_tree_leaves(tree->right);
+	return (leaves_left + leaves_right);
 }
 
 /**
@@ -48,19 +48,18 @@ size_t binary_tree_height(const binary_tree_t *tree)
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int left_height, right_height, left_leaves, right_leaves, sum_leaves;
+	int left_height, right_height, left_leaves, right_leaves;
 
 	if (!tree)
 		return (0);
 
 	left_height = binary_tree_height(tree->left);
 	right_height = binary_tree_height(tree->right);
+	left_leaves = binary_tree_leaves(tree->left);
+	right_leaves = binary_tree_leaves(tree->right);
 
-	left_leaves = binary_tree_leaves_v2(tree->left);
-	right_leaves = binary_tree_leaves_v2(tree->right);
-	sum_leaves = left_leaves + right_leaves;
 
-	if (left_height == right_height && sum_leaves == 2)
+	if (left_height == right_height && left_leaves == right_leaves)
 		return (1);
 	return (0);
 
